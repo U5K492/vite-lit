@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  gap: 30px;
+  background-color: lightslategray;
+}
+
+.basic-card-title {
+  height: fit-content;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  background-color: #a8a8a8;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 0;
+  width: 100%;
+}
+
+basic-card {
+  margin: 0;
+}
+
+.basic-accordion-title {
+  height: fit-content;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  background-color: #a8a8a8;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 0;
+  width: 100%;
+}
+
+basic-accordion {
+  margin: 0;
+  width: 50%;
+}
