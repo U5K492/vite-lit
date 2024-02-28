@@ -13,7 +13,7 @@ export class BasicCard extends LitElement {
       if (value === null) {
         return []
       }
-      let val = value!.substring(1, value.length - 1)
+      let val = value?.substring(1, value.length - 1)
       const regex = /\{[^}]+\}/g
       const matches = val.match(regex)
       if (matches == null) {
