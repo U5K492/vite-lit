@@ -52,15 +52,18 @@ export class BasicDropdown extends LitElement {
     `,
   ]
 
-  @property({ converter(value) {
-    if (value === null) {
-      return []
-    }
-    const str = value?.substring(1, value.length - 1)
-    const arr = str.replace(/'/g, "").split(",")
-    console.log(arr)
-    return arr
-  }, type: Array })
+  @property({
+    converter(value) {
+      if (value === null) {
+        return []
+      }
+      const str = value?.substring(1, value.length - 1)
+      const arr = str.replace(/'/g, '').split(',')
+      console.log(arr)
+      return arr
+    },
+    type: Array,
+  })
   items: string[] = []
 
   @property()
@@ -78,7 +81,10 @@ export class BasicDropdown extends LitElement {
                 <option
                   class="item"
                   value="${item}"
-                  @click="${() => (this._selected = item)}"
+                  @click="${
+                    // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
+                    () => (this._selected = item)
+                  }"
                 >
                   ${item}
                 </option>

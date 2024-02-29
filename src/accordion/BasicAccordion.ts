@@ -58,10 +58,6 @@ export class BasicAccordion extends LitElement {
     `,
   ]
 
-  constructor() {
-    super()
-  }
-
   @property()
   title = 'accordion'
 
@@ -75,7 +71,10 @@ export class BasicAccordion extends LitElement {
           <p class="title">${this.title}</p>
           <button
             class="btn"
-            @click="${() => (this._isOpen = !this._isOpen)}"
+            @click="${
+              // biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
+              () => (this._isOpen = !this._isOpen)
+            }"
             part="button"
           >
             ${this._isOpen ? 'close' : 'open'}

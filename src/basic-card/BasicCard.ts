@@ -13,15 +13,15 @@ export class BasicCard extends LitElement {
       if (value === null) {
         return []
       }
-      let val = value?.substring(1, value.length - 1)
+      const val = value?.substring(1, value.length - 1)
       const regex = /\{[^}]+\}/g
       const matches = val.match(regex)
       if (matches == null) {
         return []
       }
-      const res: CardContents = matches.map((matche) => {
+      const res: CardContents = matches.map((match) => {
         try {
-          const jsonStr = matche.replace(/(\w+):/g, '"$1":').replace(/'/g, '"')
+          const jsonStr = match.replace(/(\w+):/g, '"$1":').replace(/'/g, '"')
           return JSON.parse(jsonStr)
         } catch (error) {
           console.error('Parsing error:', error)
