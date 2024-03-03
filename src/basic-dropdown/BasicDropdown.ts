@@ -59,7 +59,6 @@ export class BasicDropdown extends LitElement {
       }
       const str = value?.substring(1, value.length - 1)
       const arr = str.replace(/'/g, '').split(',')
-      console.log(arr)
       return arr
     },
     type: Array,

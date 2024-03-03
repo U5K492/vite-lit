@@ -8,22 +8,32 @@
     <script type="module" src="/src/index.ts"></script>
     <script type="module" src="/src/basic-card/BasicCard.ts"></script>
     <script type="module" src="/src/accordion/BasicAccordion.ts"></script>
-    <script type="module" src="/src/basic-dropdown/BasicDropdown.ts "></script>
+    <script type="module" src="/src/basic-dropdown/BasicDropdown.ts"></script>
+    <script type="module" src="/src/basic-modal/BasicModal.ts"></script>
     <link rel="stylesheet" href="/public/index.css">
   </head>
   <body>
     <component-container>
-      <p class="title">カードコンポーネント</p>
+      <p class="title">ベーシックカードコンポーネント</p>
       <basic-card title="sample title" contents="[{header: 'item-header1', content: 'item-content1'}, {header: 'item-header2', content: 'item-content2'}, {header: 'item-header3', content: 'item-content3'}]"></basic-card>
-      <p class="title">アコーディオンコンポーネント</p>
+      <p class="title">ベーシックアコーディオンコンポーネント</p>
       <basic-accordion>
         <p>ある文書に複数の記事を含めることができます。たとえば、読者がスクロールするたびに各記事のテキストを次々と表示するブログでは、各記事は article 要素に含まれ、おそらくその中に 1 つ以上の section があります。</p>
       </basic-accordion>
       <basic-accordion>
         <p>ある文書に複数の記事を含めることができます。たとえば、読者がスクロールするたびに各記事のテキストを次々と表示するブログでは、各記事は article 要素に含まれ、おそらくその中に 1 つ以上の section があります。</p>
       </basic-accordion>
-      <p class="title">ドロップダウンメニュー</p>
+      <p class="title">ベーシックドロップダウンメニュー</p>
       <basic-dropdown items="['JavaScript', 'TypeScript', 'Python', 'Go', 'Kotlin', 'Rust']"></basic-dropdown>
+      <p class="title">ベーシックモーダル</p>
+      <basic-modal>
+        <section>
+          <h2>modal title header</h2>
+          <summary>
+            <p>ある文書に複数の記事を含めることができます。たとえば、読者がスクロールするたびに各記事のテキストを次々と表示するブログでは、各記事は article 要素に含まれ、おそらくその中に 1 つ以上の section があります。</p>
+          </summary>
+        </section>
+      </basic-modal>
     </component-container>
   </body>
 </html>
