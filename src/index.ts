@@ -17,7 +17,7 @@ export class ComponentContainer extends LitElement {
         border-radius: 4px;
         padding: 30px;
         background-color: #2f2c3b;
-        height: 100vh;
+        height: 100%;
         flex-direction: column;
         align-items: center;
       }

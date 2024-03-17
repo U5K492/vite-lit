@@ -1,6 +1,6 @@
 export type CardContent = {
-  header: String
-  content: String
+  header: string
+  content: string
 }
 
 export type CardContents = CardContent[]
