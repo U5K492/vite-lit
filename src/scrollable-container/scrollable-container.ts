@@ -15,7 +15,6 @@ export class ScrollableContainer extends LitElement {
         gap: 16px;
         overflow-y: scroll;
         width: 100%;
-        max-height: 480px;
       }
     `,
   ]
@@ -23,18 +22,33 @@ export class ScrollableContainer extends LitElement {
   @property({ type: Object })
   maxHeight = { 'max-height': '480px' }
 
-  constructor() {
-    super()
-    this.addEventListener('scrollend',
-    (e: Event) => (`scroll is end ${e}`)
-    )
-  }
-
   render() {
     return html`
-      <div class="scroll-container" style=${styleMap(this.maxHeight)}>
+      <div class="scroll-container" style=${styleMap(this.maxHeight)} @scroll="${this._isScrollBottomEnd}">
         <slot></slot>
       </div>
     `
+  }
+
+  private _isScrollBottomEnd(e: {target: HTMLElement}) {
+    const {
+      scrollHeight,
+      scrollTop,
+      clientHeight
+    } = e.target
+
+    if(scrollHeight - clientHeight === scrollTop) {
+      this._dispatchFetchEvent()
+    }
+  }
+
+
+  _dispatchFetchEvent() {
+    const fetchEvent = new CustomEvent('scroll-end', {
+      detail: { message: 'fetch!'},
+      bubbles: true,
+      composed: true,
+    })
+    this.dispatchEvent(fetchEvent)
   }
 }
