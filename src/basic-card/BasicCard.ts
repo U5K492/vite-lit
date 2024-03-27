@@ -1,4 +1,4 @@
-import { CardContents } from '@src/basic-card/_types/basic-card'
+import type { CardContents } from '@src/basic-card/_types/basic-card'
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'

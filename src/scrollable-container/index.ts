@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, eventOptions, property } from 'lit/decorators.js'
 import './scrollable-container'
-import { items, itemsJson } from './_types/qiita'
+import type { items, itemsJson } from './_types/qiita'
 import { Task } from '@lit/task'
 import { repeat } from 'lit/directives/repeat.js'
 
