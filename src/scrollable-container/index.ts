@@ -57,7 +57,7 @@ export class QiitaItems extends LitElement {
 
   protected async firstUpdated() {
     await new Promise((r) => setTimeout(r, 0))
-    this.addEventListener('scroll-end', this._handleNextFetch)
+    this.addEventListener('scroll-bottom-end', this._handleNextFetch)
   }
 
   private _itemsTask = new Task(this, {

@@ -44,7 +44,7 @@ export class ScrollableContainer extends LitElement {
 
 
   _dispatchFetchEvent() {
-    const isBottomEvent = new CustomEvent('scroll-end', {
+    const isBottomEvent = new CustomEvent('scroll-bottom-end', {
       detail: { message: 'fetch!'},
       bubbles: true,
       composed: true,
