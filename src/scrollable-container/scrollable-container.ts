@@ -24,31 +24,31 @@ export class ScrollableContainer extends LitElement {
 
   render() {
     return html`
-      <div class="scroll-container" style=${styleMap(this.maxHeight)} @scroll="${this._isScrollBottomEnd}">
+      <div class="scroll-container" style=${styleMap(this.maxHeight)} @scroll="${this._isThresholdPoint}">
         <slot></slot>
       </div>
     `
   }
 
-  private _isScrollBottomEnd(e: {target: HTMLElement}) {
+  private _isThresholdPoint(e: {target: HTMLElement}) {
     const {
       scrollHeight,
       scrollTop,
       clientHeight
     } = e.target
 
-    if(scrollHeight - clientHeight === scrollTop) {
+    if(scrollTop >= scrollHeight / 2 || scrollHeight - clientHeight === scrollTop) {
       this._dispatchFetchEvent()
     }
   }
 
 
   _dispatchFetchEvent() {
-    const isBottomEvent = new CustomEvent('scroll-bottom-end', {
+    const isThresholdPointEvent= new CustomEvent('scroll-bottom-end', {
       detail: { message: 'fetch!'},
       bubbles: true,
       composed: true,
     })
-    this.dispatchEvent(isBottomEvent)
+    this.dispatchEvent(isThresholdPointEvent)
   }
 }
